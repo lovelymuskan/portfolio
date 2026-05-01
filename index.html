@@ -13,24 +13,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Path pointing to the CSS folder -->im
+    <!-- Path pointing to the CSS folder -->
     <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
     <canvas id="stars"></canvas>
 
     <nav>
-      <a>Lovely Muskan</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-      </div>
-      <div class="theme-buttons">
-        <button onclick="setTheme('light')" title="Light Mode">☀️</button>
-        <button onclick="setTheme('dark')" title="Dark Mode">🌙</button>
-        <button onclick="setTheme('purple')" title="Purple Mode">💜</button>
-        <button onclick="setTheme('blue')" title="Blue Mode">🌊</button>
+      <a href="#" class="logo">Lovely Muskan</a>
+
+      <!-- The Hamburger Icon -->
+      <i class="fa-solid fa-bars hamburger" id="hamburger"></i>
+
+      <!-- Grouped Navigation Content -->
+      <div class="nav-content" id="nav-content">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+        </div>
+        <div class="theme-buttons">
+          <button onclick="setTheme('light')" title="Light Mode">☀️</button>
+          <button onclick="setTheme('dark')" title="Dark Mode">🌙</button>
+          <button onclick="setTheme('purple')" title="Purple Mode">💜</button>
+          <button onclick="setTheme('blue')" title="Blue Mode">🌊</button>
+        </div>
       </div>
     </nav>
 
@@ -67,6 +74,7 @@
               <span class="t-title">bash — profile.sh</span>
             </div>
             <div class="profile-container">
+              <!-- Path pointing to the Image folder -->
               <img
                 src="Image\Lovely-Pic.png"
                 alt="Lovely Muskan"
@@ -78,7 +86,7 @@
               <p class="t-blue">Lovely Muskan | DevOps Engineer</p>
 
               <p><span class="t-cmd">$</span> skills --list</p>
-              <p class="t-blue">Multi-Cloud | CI/CD | Automation | Observability | Orchestration</p>
+              <p class="t-blue">AWS | Terraform | Docker | Grafana | CI/CD</p>
 
               <p><span class="t-cmd">$</span> status</p>
               <p class="t-success">Available for opportunities 🚀</p>
@@ -334,7 +342,7 @@
       <p style="margin-top: 20px">© 2026 Lovely Muskan</p>
     </footer>
 
-    <!-- Updated path pointing to the JS folder -->
+    <!-- Path pointing to the JS folder -->
     <script src="JS/script.js"></script>
   </body>
 </html>
