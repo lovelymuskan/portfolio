@@ -47,10 +47,12 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
-/* ===== STAR CANVAS ===== */
+/* ===== MOVING STAR CANVAS ===== */
 #stars {
   position: fixed;
   top: 0;
@@ -79,13 +81,18 @@ nav {
   font-size: 22px;
   text-decoration: none;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+/* ===== HAMBURGER MENU BASE ===== */
 .hamburger {
   display: none;
   font-size: 26px;
   cursor: pointer;
   color: var(--text);
+  transition: 0.3s;
 }
 
 .nav-content {
@@ -98,6 +105,7 @@ nav {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -111,6 +119,11 @@ nav {
   border-radius: 6px;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.theme-buttons button:hover {
+  transform: scale(1.1);
 }
 
 /* ===== HERO ===== */
@@ -119,6 +132,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent),
+    radial-gradient(
+      circle at bottom left,
+      rgba(167, 139, 250, 0.1),
+      transparent
+    );
+  overflow: hidden;
   padding: 0 7%;
 }
 
@@ -126,33 +147,68 @@ nav {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 50px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
 }
 
-/* HERO TEXT */
+/* LEFT SIDE */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.status-badge .dot {
+  height: 8px;
+  width: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .hero h1 {
   font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
 }
-
 .highlight {
   color: var(--accent);
+  position: relative;
 }
 
 .hero-description {
-  margin: 20px 0;
-}
-
-/* BUTTONS */
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin: 20px 0 30px;
+  max-width: 500px;
 }
 
 .btn {
+  display: inline-block;
+  margin-top: 25px;
   padding: 12px 30px;
   background: var(--accent);
-  color: #fff;
+  color: white;
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
@@ -161,100 +217,380 @@ nav {
 
 .btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* BUTTON VARIANTS */
 .btn-outline {
-  background: transparent;
+  background: transparent !important;
   border: 2px solid var(--accent);
-  color: var(--accent);
+  color: var(--accent) !important;
+  margin-left: 15px;
 }
 
+/* Unique Resume Button Styling */
 .btn-resume {
-  background: linear-gradient(135deg, var(--accent), #1d4ed8);
+  background: linear-gradient(135deg, var(--accent), #1d4ed8) !important;
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.btn-resume:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+/* Glassy secondary button */
 .btn-glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* ⭐ HIGHLIGHT BUTTON */
-.btn-highlight {
-  background: linear-gradient(135deg, var(--accent), #1d4ed8);
-  color: #fff !important;
-  border: none;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
-.btn-highlight:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+/* RIGHT SIDE - THE GLASS TERMINAL */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
-/* ===== CARD ===== */
-.card {
-  background: var(--card);
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
+.terminal-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.t-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #27c93f;
+}
+.t-title {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin-left: 10px;
+  font-family: monospace;
+}
+
+.profile-container {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+  transform: rotate(3deg);
+  transition: 0.4s;
+}
+
+.profile-container:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.terminal-body {
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+}
+.t-cmd {
+  color: var(--accent);
+  font-weight: bold;
+}
+.t-success {
+  color: #10b981;
+}
+.t-blue {
+  color: #3b82f6;
 }
 
 /* ===== SECTIONS ===== */
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  font-size: 32px;
+  margin-bottom: 50px;
 }
 
-/* ===== GRID ===== */
+/* ===== ABOUT ===== */
+.about-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* ===== SKILLS ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--card);
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card i {
+  font-size: 40px;
+  color: var(--accent);
+  margin-bottom: 15px;
 }
 
 /* ===== EXPERIENCE ===== */
 .exp-box {
   background: var(--card);
-  padding: 30px;
+  padding: 35px;
   border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.exp-box ul {
+  list-style-position: inside;
+  margin-top: 15px;
+}
+
+.exp-box li {
+  margin-bottom: 10px;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 50px;
   background: #020617;
   color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  color: white;
+  margin: 0 15px;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* =========================================
+   📱 MOBILE RESPONSIVE STYLES 
+   ========================================= */
+
+/* --- TABLETS & SMALL DESKTOPS (Max 968px) --- */
+@media (max-width: 968px) {
+  /* Fixed Hero padding and visibility */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    align-items: flex-start;
+    overflow: visible;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    margin-top: 0;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero-description {
+    margin: 20px auto;
+  }
+
+  .hero-visual {
+    order: -1;
+    margin-bottom: 30px;
   }
 
   .hero-actions {
     justify-content: center;
   }
+
+  /* Terminal Card Polish */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin: 0 15px;
+  }
+
+  .profile-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transform: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 20px;
+  }
+
+  .terminal-body {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .terminal-body p {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
 }
 
+/* --- LARGE PHONES & TABLETS (Max 768px) --- */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 15px 5%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-content {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    gap: 15px;
+  }
+
+  .nav-content.active {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    padding: 25px;
+  }
+
+  .summary-text div {
+    justify-content: center;
+  }
+
+  .container {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+}
+
+/* --- SMALL PHONES (Max 600px) --- */
 @media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
   .hero-actions {
     flex-direction: column;
+    gap: 15px;
   }
 
   .btn {
     width: 100%;
+    justify-content: center;
     text-align: center;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+  }
+
+  .glass-card {
+    padding: 15px;
+  }
+
+  .profile-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .terminal-body {
+    font-size: 0.75rem;
+  }
+
+  .exp-box {
+    padding: 20px;
+  }
+
+  .exp-box ul {
+    padding-left: 10px;
+    font-size: 0.9rem;
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+  .summary-stats div:nth-child(3) {
+    grid-column: span 1;
   }
 }
