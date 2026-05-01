@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovely Muskan | DevOps Engineer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Path pointing to the CSS folder -->
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <canvas id="stars"></canvas>
+
+    <nav>
+      <a>Lovely Muskan</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+      </div>
+      <div class="theme-buttons">
+        <button onclick="setTheme('light')" title="Light Mode">☀️</button>
+        <button onclick="setTheme('dark')" title="Dark Mode">🌙</button>
+        <button onclick="setTheme('purple')" title="Purple Mode">💜</button>
+        <button onclick="setTheme('blue')" title="Blue Mode">🌊</button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="status-badge">
+            <span class="dot"></span> Available for New Opportunities
+          </div>
+          <h1>I'm <span class="highlight">Lovely Muskan</span></h1>
+          <h2 id="typing"></h2>
+          <p class="hero-description">
+            Bridging the gap between development and operations with 3+ years of
+            experience in automating high-scale cloud architectures.
+          </p>
+          <div
+            class="hero-actions"
+            style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px"
+          >
+            <a href="your-resume-link.pdf" download class="btn btn-resume">
+              <i class="fa-solid fa-file-arrow-down"></i> Get Resume
+            </a>
+            <a href="#about" class="btn btn-glass">Explore Portfolio</a>
+            <a href="#experience" class="btn btn-outline">View Exp</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="glass-card">
+            <div class="terminal-header">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+              <span class="t-title">bash — profile.sh</span>
+            </div>
+            <div class="profile-container">
+              <img
+                src="C:\Users\Siddharth\Desktop\Lovely\Image\LovelyOne.jpeg"
+                alt="Lovely Muskan"
+                class="profile-img"
+              />
+            </div>
+            <div class="terminal-body">
+              <p><span class="t-cmd">$</span> whoami</p>
+              <p class="t-blue">Lovely Muskan | DevOps Engineer</p>
+
+              <p><span class="t-cmd">$</span> skills --list</p>
+              <p class="t-blue">Multi-Cloud | CI/CD | Automation | Observability | Orchestration</p>
+
+              <p><span class="t-cmd">$</span> status</p>
+              <p class="t-success">Available for opportunities 🚀</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h2 class="section-title">Profile Summary</h2>
+      <div
+        class="about-card"
+        style="
+          text-align: left;
+          display: grid;
+          grid-template-columns: 1fr 300px;
+          gap: 40px;
+          align-items: center;
+        "
+      >
+        <div class="summary-text">
+          <p style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px">
+            A
+            <span style="color: var(--accent); font-weight: 700"
+              >purpose-driven DevOps Engineer</span
+            >
+            with <b>3 years of experience</b> who thrives both as a
+            collaborative team player and as an independent contributor.
+          </p>
+          <p style="font-size: 1.1rem; opacity: 0.9">
+            Committed to continuous learning, operational excellence, and
+            delivering robust, production-ready solutions that align with
+            business goals.
+          </p>
+          <div
+            style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap"
+          >
+            <span
+              style="
+                background: rgba(59, 130, 246, 0.1);
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--accent);
+              "
+              >#OperationalExcellence</span
+            >
+            <span
+              style="
+                background: rgba(59, 130, 246, 0.1);
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--accent);
+              "
+              >#ContinuousLearning</span
+            >
+            <span
+              style="
+                background: rgba(59, 130, 246, 0.1);
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: var(--accent);
+              "
+              >#TeamPlayer</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="summary-stats"
+          style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px"
+        >
+          <div
+            style="
+              background: var(--bg);
+              padding: 20px;
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <i
+              class="fa-solid fa-calendar-check"
+              style="color: var(--accent); font-size: 24px; margin-bottom: 8px"
+            ></i>
+            <h4 style="font-size: 1.5rem">3+</h4>
+            <p style="font-size: 0.75rem; text-transform: uppercase">
+              Years Exp
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--bg);
+              padding: 20px;
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <i
+              class="fa-solid fa-rocket"
+              style="color: var(--accent); font-size: 24px; margin-bottom: 8px"
+            ></i>
+            <h4 style="font-size: 1.5rem">100+</h4>
+            <p style="font-size: 0.75rem; text-transform: uppercase">
+              Deployments
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--bg);
+              padding: 20px;
+              border-radius: 12px;
+              text-align: center;
+              grid-column: span 2;
+            "
+          >
+            <i
+              class="fa-solid fa-award"
+              style="color: var(--accent); font-size: 24px; margin-bottom: 8px"
+            ></i>
+            <p style="font-size: 0.8rem; font-weight: 600">
+              Award-Winning Solutions
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="card">
+          <i class="fa-brands fa-aws"></i>
+          <h3>Cloud</h3>
+          <p>AWS, Azure</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>IaC</h3>
+          <p>Terraform</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Programming</h3>
+          <p>Python, Bash</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-infinity"></i>
+          <h3>CI/CD</h3>
+          <p>Jenkins, Azure DevOps, TeamCity</p>
+        </div>
+        <div class="card">
+          <i class="fa-brands fa-docker"></i>
+          <h3>Containers</h3>
+          <p>Docker, Kubernetes</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Monitoring</h3>
+          <p>Grafana, Prometheus</p>
+        </div>
+        <div class="card">
+          <i class="fa-brands fa-linux"></i>
+          <h3>OS</h3>
+          <p>Linux, Windows</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-gears"></i>
+          <h3>Config Mgmt</h3>
+          <p>Ansible</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="exp-box">
+        <h3>DevOps Engineer | Indus Net Technologies</h3>
+        <p><strong>2023 - Present</strong></p>
+
+        <ul>
+          <li>
+            Designed and provisioned scalable cloud infrastructure on AWS and
+            Azure using Terraform.
+          </li>
+          <li>
+            Implemented end-to-end CI/CD pipelines using Jenkins, Azure DevOps,
+            and AWS CodePipeline.
+          </li>
+          <li>
+            Automated deployment workflows using Bash, PowerShell, and Python.
+          </li>
+          <li>
+            Containerized applications using Docker and optimized builds with
+            multi-stage Dockerfiles.
+          </li>
+          <li>
+            Implemented monitoring and alerting using Prometheus, Grafana, and
+            Loki.
+          </li>
+          <li>
+            Automated server configuration using Ansible across Linux and
+            Windows environments.
+          </li>
+          <li>
+            Provided 24/7 production support, ensuring high system availability.
+          </li>
+        </ul>
+
+        <div
+          style="
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+          "
+        >
+          <p style="font-weight: 600; color: var(--accent); margin-bottom: 5px">
+            <i class="fa-solid fa-trophy"></i> Key Achievement
+          </p>
+          <p style="font-size: 0.95rem; font-style: italic">
+            Recognized by the client with an appreciation award (gift voucher)
+            for delivering impactful automation and monitoring solutions using
+            Grafana and Prometheus, leading to reduced infrastructure costs,
+            enhanced visibility, and improved system performance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h2>Let's Connect</h2>
+      <div class="socials">
+        <a href="mailto:lovelymuskan.job@gmail.com" title="Email"
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/lovelymuskan"
+          target="_blank"
+          title="LinkedIn"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/lovelymuskan" target="_blank" title="GitHub"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <p style="margin-top: 20px">© 2026 Lovely Muskan</p>
+    </footer>
+
+    <!-- Updated path pointing to the JS folder -->
+    <script src="JS/script.js"></script>
+  </body>
+</html>
