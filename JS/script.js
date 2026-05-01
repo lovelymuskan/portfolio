@@ -81,3 +81,26 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+/* ===== MOBILE MENU TOGGLE ===== */
+const hamburger = document.getElementById("hamburger");
+const navContent = document.getElementById("nav-content");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+// Toggle menu on hamburger click
+hamburger.addEventListener("click", () => {
+  navContent.classList.toggle("active");
+
+  // Switch between hamburger icon and X icon
+  hamburger.classList.toggle("fa-bars");
+  hamburger.classList.toggle("fa-xmark");
+});
+
+// Close the menu automatically when a link is clicked
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navContent.classList.remove("active");
+    hamburger.classList.add("fa-bars");
+    hamburger.classList.remove("fa-xmark");
+  });
+});
