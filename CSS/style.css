@@ -86,6 +86,20 @@ nav {
   gap: 10px;
 }
 
+/* ===== HAMBURGER MENU BASE ===== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a {
   margin-left: 25px;
   text-decoration: none;
@@ -404,44 +418,169 @@ footer {
   transform: scale(1.2);
 }
 
-/* Responsive */
+/* =========================================
+   📱 MOBILE RESPONSIVE STYLES 
+   ========================================= */
+
+/* --- TABLETS & SMALL DESKTOPS (Max 968px) --- */
 @media (max-width: 968px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 100px;
   }
+
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   .hero-description {
     margin: 20px auto;
   }
+
   .hero-visual {
     order: -1;
+    margin-bottom: 30px;
   }
-}
 
-@media (max-width: 768px) {
-  .about-card {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
-  }
-  .summary-text div {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 600px) {
   .hero-actions {
     justify-content: center;
   }
-  .btn {
-    width: 100%; /* Stack buttons on very small mobile */
+
+  /* Terminal Card Polish */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin: 0 15px;
+  }
+
+  .profile-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    transform: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 20px;
+  }
+
+  .terminal-body {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .terminal-body p {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* --- LARGE PHONES & TABLETS (Max 768px) --- */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 15px 5%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-content {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    gap: 15px;
+  }
+
+  .nav-content.active {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .about-card {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    padding: 25px;
+  }
+
+  .summary-text div {
     justify-content: center;
   }
+
+  .container {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+}
+
+/* --- SMALL PHONES (Max 600px) --- */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .btn-outline {
     margin-left: 0;
-    margin-top: 10px;
+  }
+
+  .glass-card {
+    padding: 15px;
+  }
+
+  .profile-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .terminal-body {
+    font-size: 0.75rem;
+  }
+
+  .exp-box {
+    padding: 20px;
+  }
+
+  .exp-box ul {
+    padding-left: 10px;
+    font-size: 0.9rem;
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+  .summary-stats div:nth-child(3) {
+    grid-column: span 1;
   }
 }
